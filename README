@@ -1,0 +1,14 @@
+Given a 01 matrix M, find the longest line of consecutive one in the matrix. The line could be horizontal, vertical, diagonal or anti-diagonal.
+Example:
+
+Input:
+[[0,1,1,0],
+ [0,1,1,0],
+ [0,0,0,1]]
+Output: 3
+
+
+Using 2D Dynamic Programming
+
+Time complexity:  O(nm) - matrix traverced once only
+Space : O(n) - dp array of size 4n, where n is the number of col
