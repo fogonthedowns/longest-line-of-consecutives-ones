@@ -18,8 +18,8 @@ func longestLine(M [][]int) int {
 		old := 0
 		for j := 0; j < len(M[0]); j++ {
 			if M[i][j] == 1 {
-				dp[j][0] = vertical(j, dp)
-				dp[j][1] = horizontal(i, j, dp)
+				dp[j][0] = horizontal(j, dp)
+				dp[j][1] = vertical(i, j, dp)
 
 				prev := dp[j][2]
 				dp[j][2] = diag(i, j, old, dp)
@@ -41,8 +41,8 @@ func longestLine(M [][]int) int {
 	return ones
 }
 
-// vertical counts are stored at dp[0]
-func vertical(j int, dp [][]int) int {
+// horizontal counts are stored at dp[0]
+func horizontal(j int, dp [][]int) int {
 	// nil guard
 	if j > 0 {
 		return dp[j-1][0] + 1
@@ -51,8 +51,8 @@ func vertical(j int, dp [][]int) int {
 	}
 }
 
-// horizontal counts are stored at dp[1]
-func horizontal(i, j int, dp [][]int) int {
+// vertical counts are stored at dp[1]
+func vertical(i, j int, dp [][]int) int {
 	// nil guard
 	if i > 0 {
 		return dp[j][1] + 1

@@ -10,5 +10,14 @@ Output: 3
 
 Using 2D Dynamic Programming
 
+Iterating through the above example DP would look like this:
+
+[[0 0 0 0] [1 1 1 1] [2 1 1 1] [0 0 0 0]]
+[[0 0 0 0] [1 2 1 2] [2 2 2 1] [0 0 0 0]]
+[[0 0 0 0] [0 0 0 0] [0 0 0 0] [1 1 3 1]]
+
+notice each input[i][j] = [h, v, diag1, diag2].
+The values indicate counts at the current iteration.
+
 Time complexity:  O(nm) - matrix traverced once only
 Space : O(n) - dp array of size 4n, where n is the number of col
